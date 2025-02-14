@@ -140,6 +140,13 @@ print(np.exp(r2))
 print(np.log(r2))
 print(np.log(r3))
 
+r4 = np.array([1, 2, 3])
+print(np.subtract(r2, r4)) # -
+print(np.negative(r2)) # *(-1)
+print(np.divide(r2,r4)) # /
+print(np.floor_divide(r2,r4)) #//
+print(np.power(r2,np.abs(r4))) # **
+print(np.mod(r2,r4)) # %
 
 
 
