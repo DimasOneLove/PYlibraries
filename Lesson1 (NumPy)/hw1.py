@@ -51,7 +51,7 @@ print(np.random.randint(0, 10, 5))
 
 ### Срезы
 
-## 7. Написать кода для создания срезов массива 3 на 4
+## 7. Создание срезов массива 3 на 4
 # - первые две строки и три столбца
 # - первые три строки и второй столбец
 # - все строки и столбцы в обратном порядке
@@ -87,3 +87,59 @@ vector_row = arr1[np.newaxis, :]
 vector_row1 = arr1[None, :] # newaxis == None
 print(vector_row)
 print(vector_row1)
+
+## 10. Метод dstack
+r1 = np.array([1, 2, 3])
+r2 = np.array([4, 5, 6])
+print(np.dstack([r1, r2]))
+r3 = np.array([7, 8, 9])
+print(np.dstack([r1, r2, r3]))
+
+## 11. Методы split, vsplit, dsplit, hsplit
+r1 = np.arange(1,9)
+print(np.split(r1, 2))
+print(np.split(r1, 4)) # равномерное разбиение
+
+print(np.array_split(r1, 3)) # неравномерное разбиение
+
+r2 = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print(np.split(r2, 3, axis=0)) # по строчкам
+print(np.split(r2, 3, axis=1)) # по столбццам
+
+r3 = np.array([[1,2,3,4],[5,6,7,8],[9, 10, 11, 12],[13, 14, 15, 16]])
+print(np.vsplit(r3, 2)) # разбиение на подматрицы по строкам
+print(np.vsplit(r3, 4)) 
+print(np.hsplit(r3, 4)) # разбиение на подматрицы по столбцам
+print(np.hsplit(r3, 2))
+
+r4 = np.arange(24).reshape(2, 3, 4)
+print(np.dsplit(r4, 2)) # разделение массива в глубину по 3-ей оси (axis=2)
+
+
+### Вычисления с массивами
+
+## 12. Использование универсальных функций:
+arr_deg = np.array([0, 30, 45])
+arr = np.deg2rad(arr_deg)
+print(np.sin(arr_deg))
+print(np.cos(arr_deg))
+print(np.tan(arr_deg))
+print(np.sinh(arr_deg))
+print(np.cosh(arr_deg))
+print(np.tanh(arr_deg))
+print(np.arcsin(arr))
+print(np.arccos(arr))
+
+r1 = np.arange(1,100)
+print(np.average(r1))
+
+r2 = np.array([-1, 3, -5])
+r3 = np.zeros(3)
+print(np.abs(r2, out=r3))
+print(np.exp(r2))
+print(np.log(r2))
+print(np.log(r3))
+
+
+
+

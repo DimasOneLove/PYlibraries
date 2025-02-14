@@ -110,7 +110,7 @@ a[0] = 10.123
 print(a) # зафиксирован тип массива, изменение типа не происходит
 
 
-### Срезы [start: finish: step], по умолчанию [1: shape: 1]
+## Срезы [start: finish: step], по умолчанию [1: shape: 1]
 
 a = np.array([1,2,3,4,5,6])
 print([x for x in a.shape], a.size)
@@ -138,3 +138,51 @@ print(a.reshape(2,6))
 print(a.reshape(3,4))
 
 # --- см. дз № 9 ---
+
+x = np.array([1, 2, 3])
+y = np.array([4, 5])
+z = np.array([6])
+print(np.concatenate([x, y, z])) #склеили массивы горизонтально в 1 строчку
+
+x = np.array([1, 2, 3])
+y = np.array([4, 5, 6])
+r1 = np.vstack([x,y]) #склеили вертикально
+print(r1)
+
+print(np.hstack([r1, r1])) #склеили горизонтально
+
+# --- см. дз № 10, 11 ---
+
+
+### Вычисления с массивами
+
+##Векторизированная операция - независимо применяются к каждому элементу массива
+
+x = np.arange(10)
+print(x)
+print(x*2 + 1) 
+
+# Универсальные функции
+
+print(np.add(np.multiply(x, 2), 1)) #аналогично строчкам выше
+# -, -, /, //, **, % - тоже универсальные функции
+# np.abs, sin/cos/tan/arc.., exp, log
+# --- см. дз № 12 ---
+
+x = np.arange(5)
+y = np.empty(5)
+print(np.multiply(x, 10, out = y))
+print(x, y)
+z = np.zeros(10)
+np.multiply(x, 10, out = z[::2]) # записываем в срез другого массива
+print(z)
+
+x = np.arange(1,5)
+print(np.add.reduce(x)) # сумма всех эл-тов
+print(np.add.accumulate(x)) # сложение элемента с предыдущим
+
+# Векторные произведения
+x=np.arange(1,10)
+print(np.add.outer(x,x)) # ~таблица сложения, для всех пар вычислили сумму
+print(np.multiply.outer(x,x)) # ~таблица умножения
+
