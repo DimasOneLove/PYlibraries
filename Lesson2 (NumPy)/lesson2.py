@@ -157,3 +157,73 @@ print(np.sum(y < 4))
 
 
 ## Маски - булевые массивы
+x = np.array([1,2,3,4,5])
+y = print(x < 3)
+
+print(x[x < 3])
+
+print(bin(42))
+print(bin(59))
+print(bin(42 & 59))
+
+
+## Векторизация индекса
+x = np.array([0,1,2,3,4,5,6,7,8,9])
+index = [1,5,7]
+print(x[index])
+index = [[1,5,7], [2,4,8]]
+print(x[index]) # форма результата отражает форму массива индексов, а не форму исходного массива
+
+x = np.arange(12).reshape((3,4))
+
+print(x)
+print(x[2])
+print(x[2, [2,0,1]])
+print(x[1:, [2,0,1]])
+
+x = np.arange(10)
+i = np.array([2,1,8,4])
+
+print(x)
+x[i] = 999
+print(x)
+
+
+## Сортировка массивов
+
+x = [3,2,3,5,6,7,2,3,2]
+print(sorted(x))
+print(np.sort(x)) # быстрее для больщих объемов
+
+
+## Структурированные массивы
+
+data = np.zeros(4, dtype = {
+    'names':(
+        'name', 'age'
+    ),
+    'formats':(
+        'U10', 'i4'
+    )
+})
+
+print(data.dtype)
+
+name = ['name1', 'name2', 'name3', 'name4']
+age = [10, 20, 30, 40]
+
+data['name'] = name
+data['age'] = age
+
+print(data)
+print(data['age'] > 20)
+print(data[data['age'] > 20]['name'])
+
+
+## Массивы записей
+
+data_rec = data.view(np.recarray)
+print(data_rec)
+print(data_rec[0])
+print(data_rec[0][1])
+print(data_rec[-1].name)
