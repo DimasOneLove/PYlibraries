@@ -135,7 +135,7 @@ print(data['a':'c'])  # включая обе границы
 print(data[0:2])  # а здесь как обычно в массиве (не включая 2)
 print(data[(data > 0.5) & (data < 1)])
 print(data[['a','d']])
-print(data[1]) # индексы строчные -> 1 это индеккс для стандартного массива
+print(data[1]) # индексы строчные -> 1 это индекс для стандартного массива
 
 data = pd.Series([0.25, 0.5, 0.75, 1.0], index = [1, 3, 10, 15])
 print(data[1]) # выведется по индексу (из массива индексов), а не позиционный индекс стандартного массива
@@ -177,7 +177,7 @@ data['new'] = data['area1']
 print(data)
 data['new1'] = data['area1'] / data['pop1']
 print(data)
-
+ 
 ## как двумерный NumPy-массив
 data = pd.DataFrame({'area1':area, 'pop1': pop})
 print(data)
@@ -325,3 +325,5 @@ df = pd.DataFrame(
 print(df.dropna(axis=1, how='all'))
 print(df.dropna(axis=1, how='any'))
 print(df.dropna(axis=1, thresh=2))
+
+# --- см. дз №5 ---
