@@ -327,11 +327,6 @@ print (pop.unstack(level=2))
 
 ## NumPy Конкатенация
 
-# x = [1,2,3]
-# y = [4,5,6] 
-# z = [7,8,9]
-
-# print (np.concatenate([x,y,z]))
 x = [[1,2,3]] 
 y = [[4,5,6]] 
 z = [[7,8,9]]
